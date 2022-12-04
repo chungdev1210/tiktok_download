@@ -1,0 +1,219 @@
+.container-fluid {
+   width: 100%;
+   margin-right: auto;
+   margin-left: auto;
+}
+
+.hero {
+   height: 280px;
+   flex-direction: column;
+   align-items: center;
+   padding-top: 40px;
+   background: #195fd7;
+
+   .hero-h1,
+   .hero-h2 {
+      color: #fff;
+      text-align: center;
+   }
+
+   h1 {
+      font-size: 48px;
+      line-height: 58px;
+      margin-bottom: 6px;
+      font-weight: 600;
+   }
+
+   h2 {
+      font-size: 20px;
+      line-height: 24px;
+      font-weight: 500;
+   }
+
+   .hero-form {
+      form {
+         margin: 0 auto;
+         max-width: 760px;
+      }
+
+      .hero-input {
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+         gap: 8px;
+         max-width: 760px;
+         justify-content: space-between;
+      }
+
+      .hero-input-left {
+         width: 100%;
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+         padding: 0;
+         background: #fff;
+         border-radius: 4px;
+         // justify-content: space-between;
+      }
+
+      .input-icon {
+         display: flex;
+         align-items: center;
+      }
+
+      .icon-link {
+         margin: 0 8px;
+         color: #ccc !important;
+      }
+
+      .form-input {
+         width: 590px;
+         // margin-right: 30px;
+         border: none;
+         border-radius: unset;
+         padding: 15px 0.75rem;
+         font-weight: 500;
+         line-height: 18px;
+         padding-left: 0;
+         padding-right: 0;
+      }
+
+      .form-input:focus {
+         box-shadow: none;
+      }
+
+      .clear {
+         .btn-clear {
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 8px 12px 8px 8px;
+            gap: 4px;
+            background: #49495acf;
+            border-radius: 6px;
+            border: none;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+            color: #fff;
+            margin-right: 6px;
+         }
+      }
+
+      .hero-input-right {
+         margin-top: 7px;
+
+         .btn-go {
+            padding: 12px;
+            gap: 10px;
+            background: #00be63;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 24px;
+            color: #fff;
+            width: 100%;
+            margin-top: 8px;
+            margin-bottom: 1rem;
+            border: none;
+         }
+      }
+   }
+
+}
+
+.down_left {
+   background-color: #f5f7fa;
+   height: 110px;
+   border-radius: 8px;
+   display: flex;
+   align-items: center;
+
+   .down__img {
+      margin-top: 4px;
+      margin-right: 8px;
+
+      video {
+         border-radius: 8px;
+         width: 95px;
+         height: 95px;
+         object-fit: cover;
+      }
+   }
+
+   .down__info {
+      padding: 10px;
+      width: 100%;
+
+      .down__title {
+         font-size: 1rem !important;
+      }
+
+      .down__author {
+         font-size: 0.9rem !important;
+         color: #49495a;
+      }
+   }
+}
+
+.down__right {
+
+   .down__server1,
+   .down__server2 {
+      text-decoration: none;
+      width: 400px !important;
+      // background-color: #0063f9;
+      color: #fff;
+      display: block;
+      position: relative;
+   }
+
+   .down__item {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      color: #fff;
+   }
+}
+
+.loading {
+   span {
+      color: #fff;
+      font-weight: 400;
+      font-size: 18px;
+   }
+
+   .wobbling-4 {
+      margin-left: 45px;
+      width: 20px;
+      height: 20px;
+      background: #fff;
+      box-shadow: 0 0 60px 15px #fff;
+      transform: translate(-90px);
+      clip-path: inset(0);
+      animation:
+         w4-1 0.5s ease-in-out infinite alternate,
+         w4-2 1s ease-in-out infinite;
+   }
+   
+   @keyframes w4-1 {
+      100% {
+         transform: translateX(90px)
+      }
+   }
+   
+   @keyframes w4-2 {
+      33% {
+         clip-path: inset(0 0 0 -100px)
+      }
+   
+      50% {
+         clip-path: inset(0 0 0 0)
+      }
+   
+      83% {
+         clip-path: inset(0 -100px 0 0)
+      }
+   }
+}
+
