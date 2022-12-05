@@ -1,11 +1,13 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import { StateContext } from '../../Services/Context/StateProvider';
+import axios from 'axios';
 
 export default function Download() {
    const { dataTiktok, resetData } =  useContext(StateContext)
    const { data } = dataTiktok;
-
+   console.log(data.video_data)
+   
    return (
       <div className='download__video mt-2'>
          <div className='container'>
@@ -20,10 +22,10 @@ export default function Download() {
                   </div>
                </div>
                <div className='col-12 col-md-4 offset-md-2 down__right'>
-                  <a href='#' className='down__server1 btn btn-primary mb-2' download={data.video_data.nwm_video_url}>
+                  <a href="#" className='down__server1 btn btn-primary mb-2' download={data.video_data.nwm_video_url}>
                      Download server 1
                   </a>
-                  <a href='#' className='down__server2 btn btn-success mb-2' download={data.video_data.nwm_video_url_HQ}>Download server 2</a>
+                  <a href="#" className='down__server2 btn btn-success mb-2' download={data.video_data.nwm_video_url_HQ}>Download server 2</a>
                </div>
             </div>
             <hr className='mt-5'/>

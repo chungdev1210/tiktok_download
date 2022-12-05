@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { createRef, useContext, useState } from 'react';
 import { StateContext } from '../../Services/Context/StateProvider';
 import { ToastContainer, toast } from 'react-toastify';
 
@@ -6,7 +6,8 @@ import { ToastContainer, toast } from 'react-toastify';
 export default function FormDownload() {
    const { dataTiktok, getData, resetData } = useContext(StateContext);
    const [link, setLink] = useState('');
-   console.log(dataTiktok)
+   const InputRef = createRef();
+   // console.log(dataTiktok)
 
    const handleSubmit = (e) => {
       e.preventDefault();
@@ -22,15 +23,18 @@ export default function FormDownload() {
       if (link !== "") {
          setLink(link)
       } else {
-         setLink("")
+         setLink('')
       }
    }
 
+   const handleClear = () => {
+      setLink('')
+   }
    
    const handleDownload = (e) => {
       e.preventDefault();
       resetData();
-      setLink("");
+      setLink('')
    }
 
    return (
@@ -43,13 +47,24 @@ export default function FormDownload() {
                      <input
                         name="url"
                         id="url"
-                        type="search"
+                        value={link}
+                        type="text"
                         className="form-control form-input"
                         placeholder="Dán liên kết TikTok vào đây"
-                        value={link}
-                        onChange={handleChangeValue} />
+                        onChange={handleChangeValue} 
+                     />
+                     {
+                        link !== "" 
+                        ? 
+                        <div onClick={handleClear} className='clear'>
+                           <i className="fa-solid fa-xmark"></i>
+                           <span>Clear</span>
+                        </div>
+                        : null
+                     }
                   </div>
                </div>
+
                {
                   Object.keys(dataTiktok).length === 0 || link === ""
                   ?
@@ -60,10 +75,7 @@ export default function FormDownload() {
                   (<div>
                      <a href='#' onClick={handleDownload} className='down__server2 btn btn-secondary btn-sm'>Download more</a>
                   </div>)
-                  
-                  
                }
-               
                
             </div>
          </form>
