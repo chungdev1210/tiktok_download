@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 
 
 export const StateContext = createContext();
-const { SERVER_API } = config;
+const { SERVER_API, FILE_NAME_PREFIX } = config;
 
 export default function StateProvider({ children }) {
    const [data, setData] = useState({});
@@ -19,6 +19,8 @@ export default function StateProvider({ children }) {
       axios.get(linkData)
       .then(response => {
          if(response.data.status === 'success') {
+            response.data.prefix_file_name = FILE_NAME_PREFIX;
+
             setData({
                data: response.data,
                isLoading: true

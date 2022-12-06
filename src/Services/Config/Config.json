@@ -1,3 +1,4 @@
 {
-    "SERVER_API": "https://market.vietbase.co/get.php?url="
+    "SERVER_API": "https://market.vietbase.co/get.php?url=",
+    "FILE_NAME_PREFIX": "CHUNGDEV_"
 }

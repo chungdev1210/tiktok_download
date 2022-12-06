@@ -14,8 +14,9 @@ export default function Download() {
       let _file_name     = data.desc.toString().replace(/[^a-zA-Z0-9 ]/g, '_');
       let _file_type     = 'mp4';
       let _link_download = data.video_data.nwm_video_url_HQ;
+      let _prefix        = data.prefix_file_name;
 
-      saveAs(_link_download, _file_name + '.' + _file_type);
+      saveAs(_link_download, _prefix + _file_name + '.' + _file_type);
    }
    
    return (
