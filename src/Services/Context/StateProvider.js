@@ -20,7 +20,6 @@ export default function StateProvider({ children }) {
       .then(response => {
          if(response.data.status === 'success') {
             response.data.prefix_file_name = FILE_NAME_PREFIX;
-
             setData({
                data: response.data,
                isLoading: true
