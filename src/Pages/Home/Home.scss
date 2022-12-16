@@ -148,9 +148,16 @@
 
       .down__title {
          font-size: 1rem !important;
+         line-height: 20px;
+         height: 40px;
+         overflow: hidden;
+         display: -webkit-box;
+         -webkit-box-orient: vertical;
+         -webkit-line-clamp: 2
       }
 
       .down__author {
+         margin: 16px 0 14px 0;
          font-size: 0.9rem !important;
          color: #49495a;
       }

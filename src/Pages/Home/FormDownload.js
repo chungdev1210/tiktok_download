@@ -7,7 +7,6 @@ export default function FormDownload() {
    const { dataTiktok, getData, resetData } = useContext(StateContext);
    const [link, setLink] = useState('');
    const InputRef = createRef();
-   // console.log(dataTiktok)
 
    const handleSubmit = (e) => {
       e.preventDefault();
@@ -64,8 +63,11 @@ export default function FormDownload() {
                      }
                   </div>
                </div>
+               <div className='hero-input-right'>
+                  <button type='submit' className='btn btn-go flex-center'>Download</button>
+               </div>
 
-               {
+               {/* {
                   Object.keys(dataTiktok).length === 0 || link === ""
                   ?
                   (<div className='hero-input-right'>
@@ -75,7 +77,7 @@ export default function FormDownload() {
                   (<div>
                      <a href='#' onClick={handleDownload} className='down__server2 btn btn-secondary btn-sm'>Download more</a>
                   </div>)
-               }
+               } */}
                
             </div>
          </form>
