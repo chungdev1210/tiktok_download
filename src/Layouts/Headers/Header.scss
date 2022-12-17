@@ -2,6 +2,27 @@ header .navbar {
    padding: 0;
    margin: 0;
 }
+
+.app.dark-theme {
+   .navbar {
+      background-color: #202b39 !important;
+      color: #fff;
+      .navbar-left {
+         span {
+            color: #fff;
+         }
+      }
+   
+      .navbar-right {
+         .navbar-lang {
+            background: transparent !important;
+            span {
+               color: #fff !important;
+            }
+         }
+      }
+   }
+}
 .container-fluid {
    display: flex;
    flex-wrap: inherit;

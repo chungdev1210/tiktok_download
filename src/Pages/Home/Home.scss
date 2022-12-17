@@ -4,6 +4,24 @@
    margin-left: auto;
 }
 
+.app.dark-theme {
+   .main {
+      .hero {
+         background-color: #0c1625;
+      }
+
+      .down_left {
+         background: #2b333e;
+
+         .down__author {
+            color: #fff;
+            font-weight: 100;
+            font-size: 0.8rem !important;
+         }
+      }
+   }
+}
+
 .hero {
    height: 280px;
    flex-direction: column;
@@ -54,6 +72,7 @@
          background: #fff;
          border-radius: 4px;
          // justify-content: space-between;
+         position: relative;
       }
 
       .input-icon {
@@ -92,11 +111,16 @@
          border-radius: 8px;
          margin-left: 6px;
          cursor: pointer;
+         position: absolute;
+         right: 4px;
+
          // display: none;
          i {
             margin: 0 6px 0 8px;
          }
-         i, span {
+
+         i,
+         span {
             line-height: 35px;
          }
       }
@@ -125,7 +149,7 @@
 
 .down_left {
    background-color: #f5f7fa;
-   height: 110px;
+   height: 100px;
    border-radius: 8px;
    display: flex;
    align-items: center;
@@ -136,17 +160,18 @@
 
       video {
          border-radius: 8px;
-         width: 95px;
-         height: 95px;
+         width: 80px;
+         height: 80px;
          object-fit: cover;
       }
    }
 
    .down__info {
-      padding: 10px;
+      padding: 6px 10px;
       width: 100%;
 
       .down__title {
+         margin: 0;
          font-size: 1rem !important;
          line-height: 20px;
          height: 40px;
@@ -157,9 +182,10 @@
       }
 
       .down__author {
-         margin: 16px 0 14px 0;
+         margin: 0;
          font-size: 0.9rem !important;
          color: #49495a;
+         line-height: 30px;
       }
    }
 }
@@ -203,25 +229,212 @@
          w4-1 0.5s ease-in-out infinite alternate,
          w4-2 1s ease-in-out infinite;
    }
-   
+
    @keyframes w4-1 {
       100% {
          transform: translateX(90px)
       }
    }
-   
+
    @keyframes w4-2 {
       33% {
          clip-path: inset(0 0 0 -100px)
       }
-   
+
       50% {
          clip-path: inset(0 0 0 0)
       }
-   
+
       83% {
          clip-path: inset(0 -100px 0 0)
       }
    }
 }
 
+/* RESPONSIVE */
+
+/* MOBILE */
+@media only screen and (min-width:320px) and (max-width: 599px) {
+   .hero {
+      height: 300px;
+      padding-top: 20px !important;
+      .hero-title {
+         .hero-h1 {
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 29px;
+         }
+         .hero-h2 {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 19px;
+            margin-bottom: 0;
+         }
+      }
+      .hero-form {
+         margin-top: 20px;
+         .hero-input {
+            display: block;
+            .hero-input-left {
+               display: block;
+               width: 100%;
+               padding: 0 6px;
+               .input-icon {
+                  input {
+                     width: 65%;
+                  }
+                  .clear {
+                     right: 4px;
+                  }
+               }
+            }
+            .hero-input-right {
+               height: 48px;
+            }
+         }
+      }
+   }
+   .content {
+      .box-content {
+         h2 {
+            font-size: 22px;
+         }
+         p {
+            font-size: 14px;
+         }
+         h4 {
+            font-size: 20px;
+         }
+         li {
+            font-size: 14px;
+         }
+      }
+   }
+   .loading {
+      padding-top: 20px;
+   }
+   .download__video {
+      .row--down {
+         display: flex;
+         justify-content: center;
+         .down_left {
+            margin: 0 8px 16px 8px;
+            width: 95% !important;
+            .down__info {
+               .down__title {
+                  font-size: 14px !important;
+               }
+            }
+         }
+         .down__right {
+            a, button {
+               width: 100% !important;
+            }
+         }
+      }
+   }
+}
+
+/* TABLET */
+/* SMALL TABLET */
+@media only screen and (min-width:600px) and (max-width: 767px) {
+   .hero {
+      height: 300px;
+      .hero-title {
+         .hero-h1 {
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 29px;
+         }
+         .hero-h2 {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 19px;
+            margin-bottom: 0;
+         }
+      }
+      .hero-form {
+         margin-top: 20px;
+         .hero-input {
+            display: block;
+            .hero-input-left {
+               display: block;
+               width: 100%;
+               padding: 0 6px;
+               .input-icon {
+                  input {
+                     width: 78%;
+                  }
+                  .clear {
+                     i {
+                        margin: 0 6px;
+                     }
+                     span {
+                        margin-right: 4px;
+                     }
+                  }
+               }
+            }
+            .hero-input-right {
+               height: 48px;
+            }
+         }
+      }
+   }
+   .loading {
+      padding-top: 16px;
+   }
+   .download__video {
+      .row--down {
+         display: flex;
+         justify-content: center;
+         .down_left {
+            margin-bottom: 16px;
+         }
+         .down__right {
+            a, button {
+               width: 100% !important;
+            }
+         }
+      }
+   }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1024px) {
+   .offset-lg-3 {
+      margin-left: 14% !important;
+   }
+}
+
+@media only screen and (min-width: 1025px) {
+   .offset-lg-3 {
+      margin-left: 25% !important;
+   }
+}
+
+@media only screen and (min-width:768px) and (max-width: 1023px) {
+   .hero-input {
+      .hero-input-left {
+         position: relative;
+         .input-icon {
+            input {
+               width: 460px;
+            }
+            .clear {
+               position: absolute;
+               right: 4px;
+               background: #49495acf;
+            }
+         }
+      }
+   }
+   .download__video {
+      .row--down {
+         display: flex;
+         justify-content: center;
+         .down_left {
+            margin-bottom: 16px;
+         }
+      }
+   }
+}
