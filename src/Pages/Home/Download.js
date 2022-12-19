@@ -1,32 +1,33 @@
 import React, { useContext, useEffect } from "react";
 import { StateContext } from "../../Services/Context/StateProvider";
 import { saveAs } from "file-saver";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+
 export default function Download(props) {
    const { dataTiktok, resetData } = useContext(StateContext);
    const { data } = dataTiktok;
-   const navigate = useNavigate();
+   const { link, loading } = props;
+   const { setLoading } = loading;
 
    const handleDownload = (e) => {
       e.preventDefault();
-
-      // let _file_name = data.desc.toString().replace(/[^a-zA-Z0-9 ]/g, "_");
+      setLoading(true)
       let _file_type = "mp4";
       let _link_download = data.video_data.nwm_video_url_HQ;
       let _prefix = data.prefix_file_name;
-      saveAs(_link_download, _prefix + getRandomInt(123456789012) + "." + _file_type);
+      saveAs(_link_download, _prefix + getRandomInt(999999999) + "." + _file_type);
+      setTimeout(() => {
+         setLoading(false)
+      }, 3000)
    };
 
    const getRandomInt = (int) => {
       let random = Math.floor(Math.random() * int)
-      console.log(random)
       return random;
    }
 
    const handleReset = () => {
       resetData();
-      props.setLink("");
+      link.setLink("");
    };
 
    return (

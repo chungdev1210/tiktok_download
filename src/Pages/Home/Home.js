@@ -5,14 +5,20 @@ import FormDownload from "./FormDownload";
 import Decription from "./Decription";
 import Download from "./Download";
 import { StateContext } from "../../Services/Context/StateProvider";
+import Loading from "../../Components/Loading/Loading";
 
 export default function Home() {
    const { dataTiktok } = useContext(StateContext);
    const { data } = dataTiktok;
    const [link, setLink] = useState("");
+   const [ loading, setLoading ] = useState(false)
    const props = {
       link,
       setLink,
+   };
+   const isLoading = {
+      loading,
+      setLoading,
    };
    return (
       <>
@@ -31,9 +37,10 @@ export default function Home() {
                      </div>
                   </div>
                ) : null}
+               { loading ? <Loading /> : null }
             </div>
          </div>
-         {data?.status == "success" ? <Download {...props} /> : null}
+         {data?.status == "success" ? <Download link={props} loading={isLoading}/> : null}
          <Decription />
       </>
    );

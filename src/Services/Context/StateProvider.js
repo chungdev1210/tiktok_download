@@ -4,6 +4,7 @@ import config from '../Config/Config.json'
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
+var CryptoJS = require("crypto-js");
 
 export const StateContext = createContext();
 const { SERVER_API, FILE_NAME_PREFIX } = config;
@@ -13,23 +14,42 @@ export default function StateProvider({ children }) {
 
    const [error, setError] = useState(false)
 
+   const encrypt_hash = (hash) => {
+      let iv_p1 = "87853baabc"
+      let iv_p2 = "060bff3f95f57"
+      let iv_p3 = "6b723b453"
+      var iv = CryptoJS.enc.Hex.parse("");
+      var key = CryptoJS.enc.Hex.parse("238fbb71a300f2e7f0c9cd2a9f21607f");
+
+      var encrypted = CryptoJS.AES.encrypt(hash.toString(), key, {
+         iv,
+         padding: CryptoJS.pad.ZeroPadding,
+      });
+
+      return encrypted.toString();
+   }
+
    const getData = (link) => {
       handleLoading()
-      const linkData = SERVER_API + link
-      axios.get(linkData)
+      const linkData = SERVER_API
+      axios.post(linkData, {
+         query: link,
+         token: encrypt_hash(Date.now())
+      })
       .then(response => {
-         if(response.data.status === 'success') {
-            response.data.prefix_file_name = FILE_NAME_PREFIX;
-            setData({
-               data: response.data,
-               isLoading: true
-            })
-         } else {
-            toast.error('Liên kết chưa đúng !!!')
-            const nData = {...data}
-            nData.isLoading = true;
-            setData(nData)
-         }
+         console.log(response)
+         // if(response.data.status === 'success') {
+         //    response.data.prefix_file_name = FILE_NAME_PREFIX;
+         //    setData({
+         //       data: response.data,
+         //       isLoading: true
+         //    })
+         // } else {
+         //    toast.error('Liên kết chưa đúng !!!')
+         //    const nData = {...data}
+         //    nData.isLoading = true;
+         //    setData(nData)
+         // }
       })
    }
 
