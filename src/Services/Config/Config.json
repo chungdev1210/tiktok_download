@@ -1,3 +1,4 @@
 {
-    "SERVER_API": "https://unicode.vn/api/tiktok.php?url="
+    "SERVER_API": "https://tiktok.vietbase.co/api/get-link",
+    "FILE_NAME_PREFIX": "chungdev_"
 }

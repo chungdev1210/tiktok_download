@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Decription() {
    return (
-      <div className='content mt-5'>
+      <div className='content pt-5'>
          <div className='container'>
             <div className='row'>
                <div className='col-12'>
