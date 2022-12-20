@@ -15,10 +15,11 @@ export default function StateProvider({ children }) {
    const [error, setError] = useState(false)
 
    const encrypt_hash = (hash) => {
-      let iv_p1 = "87853baabc"
-      let iv_p2 = "060bff3f95f57"
-      let iv_p3 = "6b723b453"
-      var iv = CryptoJS.enc.Hex.parse("");
+      let iv_p1 = '87853baabc'
+      let iv_p2 = '060bff3f95f57'
+      let iv_p3 = '6b723b453'
+      
+      var iv = CryptoJS.enc.Hex.parse(iv_p1 + iv_p2 + iv_p3);
       var key = CryptoJS.enc.Hex.parse("238fbb71a300f2e7f0c9cd2a9f21607f");
 
       var encrypted = CryptoJS.AES.encrypt(hash.toString(), key, {
@@ -35,6 +36,10 @@ export default function StateProvider({ children }) {
       axios.post(linkData, {
          query: link,
          token: encrypt_hash(Date.now())
+      }, {
+         headers: {
+            'Content-Type': 'multipart/form-data'
+         }
       })
       .then(response => {
          console.log(response)
