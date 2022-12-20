@@ -8,7 +8,7 @@ import './Main.scss'
 import clsx from 'clsx';
 
 export default function Main() {
-   const [isTheme, setTheme] = useState(false);
+   const [isTheme, setTheme] = useState(true);
 
    const props = {
       isTheme,

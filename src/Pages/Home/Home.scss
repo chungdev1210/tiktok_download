@@ -149,19 +149,19 @@
 
 .down_left {
    background-color: #f5f7fa;
-   height: 100px;
+   height: 110px;
    border-radius: 8px;
    display: flex;
    align-items: center;
 
    .down__img {
-      margin-top: 4px;
+      // margin-top: 4px;
       margin-right: 8px;
 
-      video {
+      img {
          border-radius: 8px;
-         width: 80px;
-         height: 80px;
+         width: 90px;
+         height: 90px;
          object-fit: cover;
       }
    }
@@ -184,9 +184,20 @@
       .down__author {
          margin: 0;
          font-size: 0.9rem !important;
-         color: #49495a;
+         color: #0c0c0c;
          line-height: 30px;
       }
+
+      .down__params {
+         display: flex;
+         .down__item {
+            padding-right: 50px;
+         }
+      }
+   }
+
+   .down--info {
+      display: block;
    }
 }
 
@@ -195,7 +206,7 @@
    .down__server1,
    .down__server2 {
       text-decoration: none;
-      width: 400px !important;
+      width: 100% !important;
       // background-color: #0063f9;
       color: #fff;
       display: block;

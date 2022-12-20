@@ -25,11 +25,11 @@ export default function Home() {
          <div className="hero">
             <div className="container">
                <div className="hero-title">
-                  <h1 className="hero-h1">Công Cụ Tải Video TikTok</h1>
+                  <h1 className="hero-h1">Công Cụ Tải Video TikTok, Douyin</h1>
                   <h2 className="hero-h2">Không logo, hình mờ, watermark</h2>
                </div>
                <FormDownload {...props} />
-               {dataTiktok?.isLoading == false ? (
+               {dataTiktok?.isLoading == true ? (
                   <div className="d-flex justify-content-center">
                      <div className="loading">
                         <span>Vui lòng chờ ...</span>
@@ -40,7 +40,7 @@ export default function Home() {
                { loading ? <Loading /> : null }
             </div>
          </div>
-         {data?.status == "success" ? <Download link={props} loading={isLoading}/> : null}
+         {data?.status == true ? <Download link={props} loading={isLoading}/> : null}
          <Decription />
       </>
    );

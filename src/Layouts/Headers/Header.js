@@ -17,7 +17,7 @@ export default function Header(props) {
          <div className="container-fluid">
             <div className="navbar-left">
                <Link className="navbar-brand" to="/" title="Tải Video TikTok">
-                  Snap<span>Tik</span>
+                  Tik<span>Master</span>
                </Link>
             </div>
             <div className="navbar-right">
@@ -35,12 +35,12 @@ export default function Header(props) {
                      {/* <i className="fa-sharp fa-solid fa-moon"></i> */}
                      {/* <i className="fa-sharp fa-solid fa-sun"></i> */}
                   </button>
-                  <button
+                  {/* <button
                      type="button"
                      className="reset-button navbar-btn navbar-lang"
                   >
                      <span>Languages</span>
-                  </button>
+                  </button> */}
                </div>
             </div>
          </div>
