@@ -31,7 +31,7 @@ export default function StateProvider({ children }) {
       const linkData = SERVER_API
       axios.post(linkData, {
          query: link,
-         token: encrypt_hash(Date.now())
+         token: encrypt_hash(parseInt(Date.now()/1000))
       }, {
          headers: {
             'Content-Type': 'multipart/form-data'
