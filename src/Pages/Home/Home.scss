@@ -191,7 +191,7 @@
       .down__params {
          display: flex;
          .down__item {
-            padding-right: 50px;
+            padding-right: 20px;
          }
       }
    }
@@ -331,9 +331,19 @@
          .down_left {
             margin: 0 8px 16px 8px;
             width: 95% !important;
+            height: 90px;
+            .down__img {
+               img {
+                  width: 75px;
+                  height: 75px;
+               }
+            }
             .down__info {
                .down__title {
                   font-size: 14px !important;
+               }
+               .down__params {
+                  display: none;
                }
             }
          }
@@ -407,6 +417,13 @@
                width: 100% !important;
             }
          }
+         .down__info {
+            .down__params {
+               .down__item {
+                  padding-right: 10px;
+               }
+            }
+         }
       }
    }
 }
@@ -445,6 +462,14 @@
          justify-content: center;
          .down_left {
             margin-bottom: 16px;
+         }
+
+         .down__info {
+            .down__params {
+               .down__item {
+                  padding-right: 10px;
+               }
+            }
          }
       }
    }
