@@ -142,7 +142,6 @@
          }
       }
    }
-
 }
 
 .down_left {
@@ -163,7 +162,6 @@
          object-fit: cover;
       }
    }
-
    .down__info {
       padding: 6px 10px;
       width: 100%;
@@ -178,14 +176,12 @@
          -webkit-box-orient: vertical;
          -webkit-line-clamp: 2
       }
-
       .down__author {
          margin: 0;
          font-size: 0.9rem !important;
          color: #0c0c0c;
          line-height: 30px;
       }
-
       .down__params {
          display: flex;
          .down__item {

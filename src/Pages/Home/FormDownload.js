@@ -1,11 +1,9 @@
-import React, { createRef, useContext, useState, useEffect } from "react";
+import React, { useContext } from "react";
 import { StateContext } from "../../Services/Context/StateProvider";
 import { ToastContainer, toast } from "react-toastify";
 
 export default function FormDownload(props) {
    const { getData, resetData } = useContext(StateContext);
-   // console.log(props);
-   const InputRef = createRef();
 
    const handleSubmit = (e) => {
       e.preventDefault();
