@@ -5,7 +5,6 @@ import { saveAs } from "file-saver";
 export default function Download(props) {
    const { dataTiktok, resetData } = useContext(StateContext);
    const { data, prefix_file_name } = dataTiktok.data;
-   console.log(data);
    const { link, loading } = props;
    const { setLoading } = loading;
 
@@ -19,7 +18,7 @@ export default function Download(props) {
       saveAs(_link_download, _prefix + id + "." + _file_type);
       setTimeout(() => {
          setLoading(false);
-      }, 3000);
+      }, 3500);
    };
 
    const handleDownloadMp3 = (e) => {
