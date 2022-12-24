@@ -27,9 +27,12 @@ export default function StateProvider({ children }) {
    const getData = (link) => {
       handleLoading()
       const linkData = SERVER_API
-      let ipUser = localStorage.getItem("ip");
-      ipUser = JSON.parse(ipUser);
-      const { ip } = ipUser;
+      let ip = "";
+      if (localStorage.getItem("ip")) {
+         let ipUser = localStorage.getItem("ip");
+         ipUser = JSON.parse(ipUser);
+         ip = ipUser.ip
+      }
       axios.post(linkData, {
          query: link,
          ip: ip,
