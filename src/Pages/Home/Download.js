@@ -18,7 +18,7 @@ export default function Download(props) {
       saveAs(_link_download, _prefix + id + "." + _file_type);
       setTimeout(() => {
          setLoading(false);
-      }, 3500);
+      }, 3000);
    };
 
    const handleDownloadMp3 = (e) => {
