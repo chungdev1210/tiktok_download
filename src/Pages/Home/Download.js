@@ -11,11 +11,6 @@ export default function Download(props) {
    const handleDownloadMp4 = (e) => {
       e.preventDefault();
       setLoading(true);
-      const id = data.author.id;
-      const _file_type = "mp4";
-      const _link_download = data.wmplay;
-      const _prefix = prefix_file_name;
-      saveAs(_link_download, _prefix + id + "." + _file_type);
       setTimeout(() => {
          setLoading(false);
       }, 3000);
@@ -24,10 +19,6 @@ export default function Download(props) {
    const handleDownloadMp3 = (e) => {
       e.preventDefault();
       setLoading(true);
-      const id = data.music_info.id;
-      const linkMp3 = data.music;
-      const prefix = prefix_file_name;
-      saveAs(linkMp3, prefix + id + ".mp3");
       setTimeout(() => {
          setLoading(false);
       }, 1500);
@@ -37,7 +28,7 @@ export default function Download(props) {
       resetData();
       link.setLink("");
    };
-
+   
    return (
       <div className="download__video mt-2">
          <div className="container">
@@ -67,23 +58,23 @@ export default function Download(props) {
                </div>
                <div className="col-lg-4 col-md-7 col-sm-8 offset-lg-2 down__right">
                   <a
-                     href="#"
+                     href={data.wmplay}
                      className="down__server1 btn btn-primary mb-2"
-                     onClick={handleDownloadMp4}
+                     // onClick={handleDownloadMp4}
                   >
                      Download server 1
                   </a>
                   <a
-                     href="#"
+                     href={data.wmplay}
                      className="down__server2 btn btn-success mb-2"
-                     onClick={handleDownloadMp4}
+                     // onClick={handleDownloadMp4}
                   >
                      Download server 2
                   </a>
                   <a
-                     href="#"
+                     href={data.music}
                      className="down__server2 btn btn-info mb-2"
-                     onClick={handleDownloadMp3}
+                     // onClick={handleDownloadMp3}
                   >
                      Download mp3
                   </a>
